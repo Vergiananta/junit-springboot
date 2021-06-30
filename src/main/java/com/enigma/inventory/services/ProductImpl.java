@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductImpl implements ProductService{
@@ -27,5 +28,10 @@ public class ProductImpl implements ProductService{
     @Override
     public void deleteProduct(String id) {
         repo.deleteById(id);
+    }
+
+    @Override
+    public Optional<Product> findProductById(String id) {
+        return repo.findById(id);
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin
-@Controller
+@RestController
 @RequestMapping("/product")
 public class ProductController {
 
@@ -17,7 +17,7 @@ public class ProductController {
     ProductService services;
 
     @PostMapping
-    public Product addProduct(Product product){
+    public Product addProduct(@RequestBody Product product){
         return services.addProduct(product);
     }
 
@@ -26,8 +26,8 @@ public class ProductController {
         return services.getProduct();
     }
 
-    @DeleteMapping
-    public void deleteProduct(String id) {
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable String id) {
         services.deleteProduct(id);
     }
 }

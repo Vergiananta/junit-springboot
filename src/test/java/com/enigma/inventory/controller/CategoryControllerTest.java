@@ -49,10 +49,6 @@ class CategoryControllerTest {
     @Autowired
     ObjectMapper objectMapper;
 
-    @Autowired
-    private WebApplicationContext wac;
-
-
     @Test
     void addCategory() throws Exception {
         Category category = new Category("ret123","makanan");
@@ -66,13 +62,13 @@ class CategoryControllerTest {
 
     }
 
-    public static String asJsonString(final Object obj) {
-        try {
-            return new ObjectMapper().writeValueAsString(obj);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        public static String asJsonString(final Object obj) {
+            try {
+                return new ObjectMapper().writeValueAsString(obj);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
-    }
 
     @Test
     void shouldReturnDefaultData() throws Exception {

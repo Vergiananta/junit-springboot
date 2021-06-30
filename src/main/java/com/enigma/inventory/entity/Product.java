@@ -54,4 +54,22 @@ public class Product {
     public void setStock(Integer stock) {
         this.stock = stock;
     }
+
+    public Product(String name, Double price, Integer stock, Category category) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.category = category;
+    }
+
+    public Product(String id, String name, Double price, Integer stock, Category category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.category = category;
+    }
+
+    public Product() {
+    }
 }
