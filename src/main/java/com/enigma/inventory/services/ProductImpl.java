@@ -34,4 +34,9 @@ public class ProductImpl implements ProductService{
     public Optional<Product> findProductById(String id) {
         return repo.findById(id);
     }
+
+    @Override
+    public Product getProductByName(String name) {
+        return repo.findProductByName(name);
+    }
 }

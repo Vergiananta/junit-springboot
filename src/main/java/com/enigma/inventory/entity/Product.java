@@ -1,5 +1,6 @@
 package com.enigma.inventory.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -21,7 +22,16 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonIgnoreProperties("product")
     private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public String getId() {
         return id;
@@ -60,6 +70,13 @@ public class Product {
         this.price = price;
         this.stock = stock;
         this.category = category;
+    }
+
+    public Product(String id,String name, Double price, Integer stock) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
     }
 
     public Product(String id, String name, Double price, Integer stock, Category category) {
