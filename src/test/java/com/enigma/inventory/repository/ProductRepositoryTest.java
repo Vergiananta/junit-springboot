@@ -33,7 +33,7 @@ public class ProductRepositoryTest {
 
     @Test
     public void whenFindByName_thenReturnProduct(){
-        Product product = new Product("A012", "tango", 2000.0, 32);
+        Product product = new Product("A01", "tango", 2000.0, 32);
         repo.save(product);
 
         Product found = repo.findProductByName(product.getName());
